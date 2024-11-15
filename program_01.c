@@ -7,17 +7,22 @@ int main(int argc, char *argv[]) {
 
     if (argc >= 2) {
         FILE *file;
+
         for (int ii = 1; ii < argc; ii++) {
             file = fopen(argv[ii], "r");
+
             if (file == NULL) {
                 printf("Error: File %s not found\n", argv[ii]);
             } else {
                 printf("File %s opened\n", argv[ii]);
+                
+                // Get the file size:
                 fseek(file, 0, SEEK_END);
                 long file_size = ftell(file);
                 printf("File size is %ld bytes\n\n", file_size);
                 fseek(file, 0, SEEK_SET);
 
+                // Allocate a buffer to store the file contents:
                 char *buffer = (char *)malloc(file_size + 1);
                 if (buffer == NULL) {
                     perror("Error allocating memory");

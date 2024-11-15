@@ -1,3 +1,4 @@
+// Author: Madison J. Anderson
 #include <stdio.h>
 #include <stdlib.h>
 

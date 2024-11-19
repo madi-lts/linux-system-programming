@@ -12,6 +12,12 @@ int main(int argc, char *argv[]) {
                     printf("%s\n", f->d_name);
                 }
             }
+            rewinddir(d);
+            while ((f = readdir(d)) != NULL) {
+                if (f->d_type == DT_REG) {
+                    printf("%s\n", f->d_name);
+                }
+            }
             closedir(d);
         }
     }

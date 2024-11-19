@@ -8,4 +8,6 @@ Remaking well known linux programs.
 
 ## program_02: ls
 
-- Prints all directories linked to any number of input files.
+- Prints all directories and then regular files linked to any number of input files.
+
+## program_03: 
